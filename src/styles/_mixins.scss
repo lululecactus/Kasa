@@ -1,0 +1,9 @@
+// Customizable flexbox mixin //
+@mixin flex-direction($direction:row, $justify-c:null, $align-c:null , $align-i:null, $flex-w:null ){
+    display:flex;
+    flex-direction:$direction;
+    justify-content:$justify-c;
+    align-content:$align-c;
+    align-items:$align-i;
+    flex-wrap: $flex-w;
+}

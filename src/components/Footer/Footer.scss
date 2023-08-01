@@ -1,0 +1,16 @@
+@import '../../styles/_mixins';
+@import '../../styles/_variables';
+
+.footer-block{
+    background-color:$black ;
+    @include flex-direction($direction:column, $align-i:center);
+    padding-top:66px ;
+    padding-bottom:29px ;
+    & img{
+        width: 122px;
+        margin-bottom: 28.56px;
+    }
+    & p {
+        color:$white;
+    }
+}

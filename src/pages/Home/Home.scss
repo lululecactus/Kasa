@@ -1,0 +1,19 @@
+@import '../../styles/_mixins';
+@import '../../styles/_variables';
+
+.card-container{
+    background-color:$primary;
+    @include flex-direction($justify-c:space-around, $flex-w:wrap);
+    border-radius:25px ; 
+    width: 100%;  
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-top: 6px;
+    padding-bottom: 43px;
+    &::after {
+        content: "";
+        width: calc(28% - 0px); // Account for margins and paddings
+        margin-bottom: 20px;
+        visibility: hidden;
+      }
+}
