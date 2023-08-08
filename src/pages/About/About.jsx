@@ -5,7 +5,6 @@ import Banner from '../../components/Banner/Banner';
 import Collapse from '../../components/Collapse/Collapse';
 
 export default function About() {
-  // Définissez un objet avec les titres et le contenu de chaque section
   const sections = [
     {
       title: 'Fiabilité',
@@ -33,6 +32,7 @@ export default function About() {
     <div>
       <Banner />
       <section className='collapse-container'>
+        {/* Map through the 'sections' array and render a Collapse component for each section */}
         {sections.map((section, index) => (
           <Collapse key={index} title={section.title}>
             <p>{section.content}</p>
