@@ -1,27 +1,24 @@
 import React from 'react';
 import './Banner.scss';
 import { useLocation } from 'react-router-dom';
-import HomeImage from '../../assets/home_pic.jpg'; 
-import AboutImage from '../../assets/about_pic.jpg'; 
+import HomeImage from '../../assets/home_pic.jpg';
+import AboutImage from '../../assets/about_pic.jpg';
 
+// Composant de la bannière
 export default function Banner() {
-  // Get the current location using the 'useLocation' hook from 'react-router-dom
+  // Obtient l'emplacement actuel en utilisant le hook 'useLocation' de 'react-router-dom'
   const location = useLocation();
 
-// Determine the banner image and title based on the current location
-  const bannerImage =
-    location.pathname === '/' 
-      ? HomeImage 
-      : location.pathname === '/about' 
-      ? AboutImage 
-      : null;
+  // Détermine l'image et le titre de la bannière en fonction de l'emplacement actuel
+  let bannerImage = null;
+  let bannerTitle = '';
 
-  const bannerTitle =
-    location.pathname === '/'
-      ? 'Chez vous, partout et ailleurs'
-      : location.pathname === '/about'
-      ? ''
-      : null;
+  if (location.pathname === '/') {
+    bannerImage = HomeImage;
+    bannerTitle = 'Chez vous, partout et ailleurs';
+  } else if (location.pathname === '/about') {
+    bannerImage = AboutImage;
+  }
 
   return (
     <section className='banner'>

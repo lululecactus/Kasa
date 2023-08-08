@@ -1,8 +1,7 @@
-
-import './About.scss';
-import React from 'react';
-import Banner from '../../components/Banner/Banner';
-import Collapse from '../../components/Collapse/Collapse';
+import './About.scss'; // Import du fichier de styles spécifiques à la page About
+import React from 'react'; // Import de la bibliothèque React
+import Banner from '../../components/Banner/Banner'; // Import du composant de bannière
+import Collapse from '../../components/Collapse/Collapse'; // Import du composant d'expansion
 
 export default function About() {
   const sections = [
@@ -32,7 +31,6 @@ export default function About() {
     <div>
       <Banner />
       <section className='collapse-container'>
-        {/* Map through the 'sections' array and render a Collapse component for each section */}
         {sections.map((section, index) => (
           <Collapse key={index} title={section.title}>
             <p>{section.content}</p>
@@ -42,5 +40,3 @@ export default function About() {
     </div>
   );
 }
-
-  
