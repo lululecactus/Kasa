@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.host{
+    @include flex-direction($direction:row-reverse, $align-i:center);
+    &_picture{
+    border-radius: 50%;
+    width: 64px;
+    margin:24px 0 21px 0;
+    }
+    &_name{
+        font-size: 18px;
+        color: $secondary;
+        width: 100px;
+        text-align: right;
+        padding-right: 10px;
+    }
+}
