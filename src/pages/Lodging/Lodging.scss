@@ -1,0 +1,6 @@
+@import '../../styles/mixins';
+
+.lodgingBlock{
+    @include flex-direction($direction:row-reverse, $justify-c:space-between);
+    padding-top: 24px;
+}

@@ -2,11 +2,11 @@
 @import '../../styles/mixins';
 
 .host{
-    @include flex-direction($direction:row-reverse, $align-i:center);
+    @include flex-direction( $align-i:center);
+    padding-bottom:21px;
     &_picture{
     border-radius: 50%;
     width: 64px;
-    margin:24px 0 21px 0;
     }
     &_name{
         font-size: 18px;
@@ -14,5 +14,6 @@
         width: 100px;
         text-align: right;
         padding-right: 10px;
+        font-weight: 500;
     }
 }
