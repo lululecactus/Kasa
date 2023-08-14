@@ -1,0 +1,6 @@
+@import '../../styles/_mixins';
+
+.collapse-container{
+    @include flex-direction($direction:column, $align-i:center);
+    gap: 30px;
+}
