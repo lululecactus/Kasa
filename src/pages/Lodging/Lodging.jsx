@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './Lodging.scss';
 import data from '../../data/data.json';
@@ -12,39 +12,47 @@ import Collapse from '../../components/Collapse/Collapse';
 
 const Lodging = () => {
   const { id } = useParams(); // Extract the 'id' parameter from the URL using useParams hook
-  const lodgingItems = data.find((item) => item.id === id); // Find the lodgingItems data that matches the 'id'
+   
   // The useNavigate hook allows you to programmatically navigate to different routes in your application.
   const navigate = useNavigate();
+  const [lodgingData,setLodgingData] = useState();
 
   useEffect(() => {
+    // Find the lodgingItems data that matches the 'id'
+    const lodgingItems = data.find((item) => item.id === id);
     if (!lodgingItems) {
+      
       // If lodgingItems data is not found, navigate to the error page
       navigate('*'); 
+    }else{
+      setLodgingData(lodgingItems)
     }
-  }, [lodgingItems, navigate]);
-  if (lodgingItems) {
+  }, [lodgingData, navigate,id]);
+
+
+  if (lodgingData) {
   return (
 
       <section>
-      <Carousel pictures={lodgingItems.pictures} title={lodgingItems.title} />
+      <Carousel pictures={lodgingData.pictures} title={lodgingData.title} />
 
       <div className='hostAndTitle'>
-        <Host name={lodgingItems.host.name} picture={lodgingItems.host.picture} />
-        <TitleAndLocation title={lodgingItems.title} location={lodgingItems.location} />
+        <Host name={lodgingData.host.name} picture={lodgingData.host.picture} />
+        <TitleAndLocation title={lodgingData.title} location={lodgingData.location} />
       </div>
 
       <div className='TagAndRating'>
-        <Tag tags={lodgingItems.tags} />
-        <Rating rating={lodgingItems.rating} />
+        <Tag tags={lodgingData.tags} />
+        <Rating rating={lodgingData.rating} />
       </div>
 
       <div className='collapseLodging'>
         <Collapse title='Description'>
-          <p>{lodgingItems.description}</p>
+          <p>{lodgingData.description}</p>
         </Collapse>
         <Collapse title='Équipements'>
           <ul>
-          {lodgingItems.equipments.map((equipment, index) => (
+          {lodgingData.equipments.map((equipment, index) => (
               <li key={index}>{equipment}</li>
           ))}
           </ul>
@@ -52,7 +60,9 @@ const Lodging = () => {
       </div>
 
     </section>
-  );}
+  );}else{
+    return null;
+  }
 };
 
 export default Lodging;

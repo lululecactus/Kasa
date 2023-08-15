@@ -2,12 +2,13 @@ import "./Home.scss"
 import Banner from "../../components/Banner/Banner"
 import Card from "../../components/Card/Card";
 import data from "../../data/data.json"
+import HomeImage from '../../assets/home_pic.jpg'; 
 
  export default function Home() {
   
   return (
     <div>
-      <Banner/>
+      <Banner bannerImage={HomeImage} bannerTitle="Chez vous, partout et ailleurs"/>
       <section className="card-container">
         {/* Map through the 'data' array and render a Card component for each item */}
         {data.map(item => (
