@@ -1,21 +1,25 @@
 @import '../../styles/_mixins';
 @import '../../styles/variables';
 
+.error {
+  @include flex-direction($direction: column, $align-i: center);
+  gap: 5vh;  
+  min-height: calc(100vh - 370px);
+  color: $secondary;
 
-.error{
-    @include flex-direction($direction:column, $align-i:center);
-    gap: 139px;
-    padding:139px 0 139px 0;
-    color:$secondary;
-    &_title{
-        font-weight: 700;
-        font-size: 288px; 
-    }
-    & p {
-        font-size: 36px;
-    }
-    & a {
-        color:$secondary;
-        font-size: 18px;
-    }
+  &_title {
+    font-weight: 700;
+    font-size: 10vw; 
+  }
+
+  & p {
+    font-size: 2vw; 
+  }
+
+  & a {
+    color: $secondary;
+    font-size: 1.5vw; /* Utilisez des unités relatives (vw) pour ajuster la taille du texte en fonction de la largeur de l'écran */
+  }
 }
+
+  
