@@ -3,7 +3,6 @@
 
 .collapse-container{
     @include flex-direction($direction:column, $align-i:center);
-    gap: 30px;
 }
 
 @include mobile{

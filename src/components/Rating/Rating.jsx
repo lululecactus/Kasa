@@ -3,7 +3,7 @@ import StarGrey from '../../assets/star_grey.png';
 import './Rating.scss';
 
 export default function Rating({ rating }) {
-  const number0fStars = parseInt(rating);
+  const number0fStars = rating;
 
   return (
     <div className='ratings'>

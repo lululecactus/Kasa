@@ -2,52 +2,72 @@
 @import '../../styles/_variables';
 @import '../../styles/keyframes';
 
-.collapse{
+.collapse {
     width: 71%;
     overflow: hidden;
-    &_name{
+
+    &_name,
+    &_content {
+        width: 100%;
+    }
+
+    &_name {
         position: relative;
         z-index: 1;
-        width: 100%;
-        @include flex-direction($justify-c:space-between, $align-i:center);
+        @include flex-direction($justify-c: space-between, $align-i: center);
         background-color: $secondary;
         border: none;
         border-radius: 5px;
-        padding:10px 20px 10px 15px;
+        padding: 10px 20px 10px 15px;
         font-size: 24px;
         font-weight: 500;
-        color:$white;
-        & img{
+        color: $white;
+
+        & img {
             transition: transform 0.3s ease-in-out;
             transform: rotate(0deg);
-        
+            cursor: pointer;
+
         }
-        &.rotate img{
+
+        &.rotate img {
             transform: rotate(180deg);
-        }    
+        }
     }
-    &_content{
+
+    &_content {
         margin-top: -20px;
         padding: 35px 20px 15px 20px;
         font-size: 18px;
         font-weight: 400;
         background-color: $primary;
-        width: 100%;
         border-radius: 5px;
         color: $secondary;
-        animation: slideDown 0.5s ease-in-out both;
-          
-    }     
+
+        &.open {
+            animation: slideDown 0.5s ease-in-out both;
+            margin-bottom: 30px
+        }
+
+        &.close {
+            animation: slideUp 0.5s ease-in-out both;
+
+        }
+    }
 }
 
-@include mobile{
-    .collapse{
+
+
+@include mobile {
+    .collapse {
         width: 100%;
-        &_name{
+
+        &_name {
             padding: 0 10px;
             font-size: 13px;
         }
-        &_content{
+
+        &_content {
             font-size: 13px;
         }
     }

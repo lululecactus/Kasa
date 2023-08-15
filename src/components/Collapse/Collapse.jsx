@@ -18,7 +18,7 @@ const Collapse = ({ title, children}) => {
         <img  src={ArrowUp} alt={ArrowUp} />
       </div>
       {/* Render the content inside a div with class 'collapse_content' if 'isOpen' is true */}
-      {isOpen && <div className="collapse_content">{children}</div>}
+      <div className={`collapse_content ${isOpen ? 'open' : 'close'}`}>{children}</div>
     </div>
   );
 };

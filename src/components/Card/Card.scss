@@ -1,9 +1,10 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-
-.card-lease{
+.card-lease,.card-lease img{
     position: relative;
+}
+.card-lease{
     width: calc(28% - 0px);
     margin-top: 50px;
     height: 340px;
@@ -15,33 +16,28 @@
         width: 100%;
         height: 255px;
     }
-    &_overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            background: $colorGradient ;
-            z-index: 1; 
-        }
     &_img{
-        position: relative;
-        object-fit: cover;
+        @include img;    
+    }
+    &_overlay,&_title{
+        position: absolute;
+    }
+    &_overlay {    
+        bottom: 0;
+        left: 0;
+        z-index: 1; 
         width: 100%;
-        height: 100%;
-        
-         
+        height: 30%;
+        background: $colorGradient ;
     }
     &_title{
-        position: absolute;
-        color: $white;
-        font-size: 18px;
-        font-weight: 500;
-        z-index: 2;
         bottom: 20px;
         left: 20px;
         right: 20px;
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-        
+        z-index: 2;
+        color: $white;
+        font-size: 18px;
+        font-weight: 500;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);    
     }
 }

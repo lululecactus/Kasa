@@ -42,7 +42,7 @@ const Lodging = () => {
         </div>
         <div className='block_ratingAndHost'>
           <Host name={lodgingData.host.name} picture={lodgingData.host.picture} />
-          <Rating rating={lodgingData.rating} />
+          <Rating rating={parseInt(lodgingData.rating)} />
         </div>
       </div>
       <div className='collapseLodging'>
