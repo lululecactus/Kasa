@@ -3,17 +3,20 @@
 
 .tags{
     @include flex-direction($align-i:center);
-    padding-top: 20px;
     gap: 10px;
+    flex-wrap: wrap;
     &_name{
         color: $white;
         background: $secondary;
         border-radius: 10px;
-        border: none;
         font-size: 14px;
-        font-weight: 500;
-        padding: 3% 20% 3% 20%;
-        white-space: nowrap;
         list-style-type: none;
+        min-width: 115px;
+        text-align: center;
+        line-height: 22px;
+        padding: 0 15px;
+        @include mobile{
+            font-size: 10px;
+        }
     }
 }

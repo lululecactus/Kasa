@@ -1,6 +1,19 @@
 @import '../../styles/_mixins';
+@import '../../styles/_variables';
 
 .collapse-container{
     @include flex-direction($direction:column, $align-i:center);
     gap: 30px;
+}
+
+@include mobile{
+    .bannerAbout section {
+        height: 223px;
+        margin-bottom: 19px;
+        &.collapse-container{
+           margin-bottom: -8px;
+           gap:20px;
+           height: 50%;
+        }
+    }
 }

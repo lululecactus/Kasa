@@ -7,7 +7,7 @@ export default function Header() {
   const location = useLocation();
   return (
     <header className='header-block'> 
-      <img  src={Logo} alt="logo de Kasa" />
+      <img className='header-block_logo' src={Logo} alt="logo de Kasa" />
       <nav>
         <ul className='header-block_nav'>
             {/* Add the class 'active' to the Accueil link if the current location is '/' */}

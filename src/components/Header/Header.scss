@@ -4,13 +4,31 @@
 .header-block {
     @include flex-direction($justify-c:space-between, $align-i:center);
     max-height: 68px;
-    margin:45px 100px 45px 100px;
+    margin:45px 100px 0px 100px;
+    @include mobile{
+      margin:20px 20px 0 20px;
+    }
+    &_logo{
+    @include mobile{
+        width: 145px;
+    }  
+
+    }
     
     &_nav {
        @include flex-direction;
+       flex-wrap: wrap;
        list-style-type: none;
-       & li:first-child{
+       @include mobile{
+        font-size: 12px;
+        text-transform:  uppercase;
+      }  
+      & li:first-child{
         padding-right: 57px;
+        @include mobile{
+          padding-right: 20px; 
+       }  
+
        }
        & li a {
         color:$secondary;

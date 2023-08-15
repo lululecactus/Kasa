@@ -20,6 +20,7 @@
         & img{
             transition: transform 0.3s ease-in-out;
             transform: rotate(0deg);
+        
         }
         &.rotate img{
             transform: rotate(180deg);
@@ -37,4 +38,17 @@
         animation: slideDown 0.5s ease-in-out both;
           
     }     
+}
+
+@include mobile{
+    .collapse{
+        width: 100%;
+        &_name{
+            padding: 0 10px;
+            font-size: 13px;
+        }
+        &_content{
+            font-size: 13px;
+        }
+    }
 }

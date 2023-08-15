@@ -1,20 +1,45 @@
+@import '../../styles/variables';
 @import '../../styles/mixins';
 
-.hostAndTitle{
-    @include flex-direction($direction:row-reverse, $justify-c:space-between);
-    padding-top: 24px;
+.block{
+    padding: 24px 0;
+    @include flex-direction($justify-c:space-between);
+    &_titleAndTag{
+        @include flex-direction($direction:column, $align-i:flex-start);
+        padding-top: 6px;    
+    }
+    &_ratingAndHost{
+        @include flex-direction($direction:column, $align-i:flex-end);
+        padding-bottom: 7px;
+    }
 }
 
-.TagAndRating{
-    @include flex-direction($justify-c:space-between);
-}
 
 .collapseLodging{
-    padding-top: 24px;
     @include flex-direction($justify-c:space-between);
-    gap: 5%;
+        gap: 5%;
     & ul >li{
         list-style-type: none; 
     }
+}
+
+@include mobile{
+    .block{
+        padding:15px 13px ;
+        flex-direction: column;
+        &_titleAndTag{
+            padding-top: 0; 
+        }
+        &_ratingAndHost{
+            @include flex-direction($direction:row-reverse, $justify-c:space-between, $align-i:center);
+            padding-bottom: 0;
+            padding-top: 16px;   
+        }
+    }
+    .collapseLodging{
+        flex-direction: column;
+        gap:20px;
+    } 
+
 }
 

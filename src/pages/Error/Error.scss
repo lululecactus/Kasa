@@ -2,9 +2,9 @@
 @import '../../styles/variables';
 
 .error {
-  @include flex-direction($direction: column, $align-i: center);
+  @include flex-direction($direction: column,$justify-c:space-evenly, $align-i: center);
   gap: 5vh;  
-  min-height: calc(100vh - 370px);
+  min-height:40vh;
   color: $secondary;
 
   &_title {
@@ -18,7 +18,7 @@
 
   & a {
     color: $secondary;
-    font-size: 1.5vw; /* Utilisez des unités relatives (vw) pour ajuster la taille du texte en fonction de la largeur de l'écran */
+    font-size: 1.5vw; 
   }
 }
 

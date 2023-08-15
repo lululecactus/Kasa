@@ -5,8 +5,8 @@
     @include flex-direction( $align-i:center);
     padding-bottom:21px;
     &_picture{
-    border-radius: 50%;
-    width: 64px;
+        border-radius: 50%;
+        width: 64px;
     }
     &_name{
         font-size: 18px;
@@ -16,4 +16,17 @@
         padding-right: 10px;
         font-weight: 500;
     }
+}
+
+@include mobile{
+    .host{
+        padding-bottom: 0;
+        &_picture{
+            width: 32px;
+        }
+        &_name{
+            font-size: 12px;
+            width: 60px;   
+        }
+    }    
 }

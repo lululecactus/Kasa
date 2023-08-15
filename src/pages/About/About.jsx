@@ -8,8 +8,8 @@ import aboutSections from './AboutSections';
 export default function About() {
   
   return (
-    <div>
-      <Banner bannerImage={AboutImage} bannerTitle=""/>
+    <div className='bannerAbout'>
+      <Banner  bannerImage={AboutImage} bannerTitle=""/>
       <section className='collapse-container'>
         {/* Map through the 'sections' array and render a Collapse component for each section */}
         {aboutSections.map((section, index) => (

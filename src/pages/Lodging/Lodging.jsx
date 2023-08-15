@@ -35,17 +35,16 @@ const Lodging = () => {
 
       <section>
       <Carousel pictures={lodgingData.pictures} title={lodgingData.title} />
-
-      <div className='hostAndTitle'>
-        <Host name={lodgingData.host.name} picture={lodgingData.host.picture} />
-        <TitleAndLocation title={lodgingData.title} location={lodgingData.location} />
+      <div className='block'>
+        <div className='block_titleAndTag'>
+          <TitleAndLocation title={lodgingData.title} location={lodgingData.location} />
+          <Tag tags={lodgingData.tags} />
+        </div>
+        <div className='block_ratingAndHost'>
+          <Host name={lodgingData.host.name} picture={lodgingData.host.picture} />
+          <Rating rating={lodgingData.rating} />
+        </div>
       </div>
-
-      <div className='TagAndRating'>
-        <Tag tags={lodgingData.tags} />
-        <Rating rating={lodgingData.rating} />
-      </div>
-
       <div className='collapseLodging'>
         <Collapse title='Description'>
           <p>{lodgingData.description}</p>

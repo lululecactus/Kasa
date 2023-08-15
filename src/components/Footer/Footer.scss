@@ -12,5 +12,18 @@
     }
     & p {
         color:$white;
+        text-align: center;
+    }
+}
+
+@include mobile{
+    .footer-block{
+        padding: 58px 121px;
+        & img{
+            margin-bottom: 5px;
+        }
+        & p{
+            font-size: 12px;
+        }    
     }
 }

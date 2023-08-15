@@ -10,10 +10,18 @@
     padding-right: 1.5%;
     padding-top: 6px;
     padding-bottom: 43px;
+    @include mobile{
+      flex-direction:column;
+      background-color:$white;
+      padding:0 0 0 0;
+   }  
     &::after {
         content: "";
         width: calc(28% - 0px); // Account for margins and paddings
         margin-bottom: 20px;
         visibility: hidden;
+        @include mobile{
+          margin-bottom:0;
+       }  
       }
 }

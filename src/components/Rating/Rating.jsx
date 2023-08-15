@@ -1,11 +1,12 @@
 import StarColor from '../../assets/star_color.png';
 import StarGrey from '../../assets/star_grey.png';
+import './Rating.scss';
 
 export default function Rating({ rating }) {
   const number0fStars = parseInt(rating);
 
   return (
-    <div>
+    <div className='ratings'>
       {Array.from({ length: 5 }, (_, index) => (
         <img
           key={index}

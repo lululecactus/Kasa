@@ -18,8 +18,12 @@ export default function Carousel({ pictures, title }) {
     setCurrentIndex((nextIndex) => (nextIndex === pictures.length - 1 ? 0 : nextIndex + 1));
   };
 
+  const singlePicture = pictures.length <= 1;
+
   return (
     <div className='carousel'>
+      {!singlePicture && (
+      <>
       <img className='carousel_arrow-left' src={ArrowLeft} alt='Previous' onClick={slidePrevious} />
       <img
         className='carousel_slide'
@@ -28,6 +32,15 @@ export default function Carousel({ pictures, title }) {
       />
       <img className='carousel_arrow-right' src={ArrowRight} alt='Next' onClick={slideNext} />
       <p className='carousel_index'>{currentIndex + 1} / {pictures.length}</p>
+      </>
+      )}
+      {singlePicture && (
+        <img
+          className='carousel_slide'
+          src={pictures[currentIndex]}
+          alt={title}
+        />
+      )}
     </div>
   );
 }

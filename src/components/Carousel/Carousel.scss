@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .carousel {
     display: flex;
@@ -7,10 +8,12 @@
     position: relative;
     height: 414px; 
     overflow: hidden;
+    
     &_slide {
         width: 100%;
         height: 100%;
-        object-fit: cover;   
+        object-fit: cover; 
+        border-radius: 25px;  
     }   
     &_arrow-left{
         position: absolute;
@@ -22,9 +25,22 @@
     }
     &_index{
         position: absolute;
-        bottom: 0;
+        bottom: 24.92px;
         color:$white;
         font-size: 18px;
+        
     }     
   }
+
+@include mobile{
+  .carousel {
+    height: 255px;
+    &_arrow-left,&_arrow-right{
+        width: 24px;    
+    } 
+    &_index{
+        visibility: hidden;    
+    }
+  }     
+}
   

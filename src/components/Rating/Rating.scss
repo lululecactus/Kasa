@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+@include mobile{
+    .ratings{
+        & img{
+            width: 13.41px;
+            height: 13px;
+        }
+    
+    }
+}
+

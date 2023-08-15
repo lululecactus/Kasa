@@ -7,3 +7,9 @@
     align-items:$align-i;
     flex-wrap: $flex-w;
 }
+
+@mixin mobile{
+    @media #{$breakpoint-screen-small}{
+        @content;
+    }
+}
