@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import './Collapse.scss';
 import ArrowUp from '../../assets/arrow_up.png';
 
-const Collapse = ({ title, children}) => {
-  // Define a state variable 'isOpen' to track the collapse state
-  const [isOpen, setIsOpen] = useState(false); 
+// Déclaration d'une composante Collapse sous forme de fonction fléchée avec 2 propriétés : title et children
+const Collapse = ({ title, children }) => {
+  // Définition d'une variable d'état 'isOpen' pour suivre l'état du collapsible (ouvert/fermé)
+  const [isOpen, setIsOpen] = useState(false);
 
+// Fonction pour changer l'état du collapsible lors du clic 
   const toggleCollapse = () => {
-    setIsOpen(!isOpen);// Function to toggle the collapse state on button click
+    setIsOpen(!isOpen);
   };
 
   return (
     <div className='collapse'>
-      {/* Render the collapse button with a conditional class 'rotate' if 'isOpen' is true */}
-      <div className={`collapse_name ${isOpen ? 'rotate' : ''}`}  onClick={toggleCollapse}>
-        {title} 
-        <img  src={ArrowUp} alt={ArrowUp} />
+      <div className={`collapse_name ${isOpen ? 'rotate' : ''}`} onClick={toggleCollapse}>
+        {title}
+        <img src={ArrowUp} alt={ArrowUp} />
       </div>
-      {/* Render the content inside a div with class 'collapse_content' if 'isOpen' is true */}
       <div className={`collapse_content ${isOpen ? 'open' : 'close'}`}>{children}</div>
     </div>
   );

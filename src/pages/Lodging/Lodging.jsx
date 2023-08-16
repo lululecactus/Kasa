@@ -11,58 +11,63 @@ import Collapse from '../../components/Collapse/Collapse';
 
 
 const Lodging = () => {
-  const { id } = useParams(); // Extract the 'id' parameter from the URL using useParams hook
-   
-  // The useNavigate hook allows you to programmatically navigate to different routes in your application.
+  // Utilisation du hook useParams pour extraire le paramètre 'id' de l'URL
+  const { id } = useParams();
+
+  // Le hook useNavigate permet de naviguer vers différentes routes de l'application.
   const navigate = useNavigate();
-  const [lodgingData,setLodgingData] = useState();
+  const [lodgingData, setLodgingData] = useState();
 
   useEffect(() => {
-    // Find the lodgingItems data that matches the 'id'
+
     const lodgingItems = data.find((item) => item.id === id);
     if (!lodgingItems) {
-      
-      // If lodgingItems data is not found, navigate to the error page
-      navigate('*'); 
-    }else{
-      setLodgingData(lodgingItems)
+      // Si les données de 'lodgingItems' ne sont pas trouvées, navigue vers la page d'erreur
+      navigate('*');
+    } else {
+      setLodgingData(lodgingItems);
     }
-  }, [lodgingData, navigate,id]);
+  }, [lodgingData, navigate, id]);
 
 
   if (lodgingData) {
-  return (
-
+    return (
       <section>
-      <Carousel pictures={lodgingData.pictures} title={lodgingData.title} />
-      <div className='block'>
-        <div className='block_titleAndTag'>
-          <TitleAndLocation title={lodgingData.title} location={lodgingData.location} />
-          <Tag tags={lodgingData.tags} />
-        </div>
-        <div className='block_ratingAndHost'>
-          <Host name={lodgingData.host.name} picture={lodgingData.host.picture} />
-          <Rating rating={parseInt(lodgingData.rating)} />
-        </div>
-      </div>
-      <div className='collapseLodging'>
-        <Collapse title='Description'>
-          <p>{lodgingData.description}</p>
-        </Collapse>
-        <Collapse title='Équipements'>
-          <ul>
-          {lodgingData.equipments.map((equipment, index) => (
-              <li key={index}>{equipment}</li>
-          ))}
-          </ul>
-        </Collapse>
-      </div>
+        {/* Affiche le carrousel avec les images de l'hébergement et le titre */}
+        <Carousel pictures={lodgingData.pictures} title={lodgingData.title} />
 
-    </section>
-  );}else{
+        <div className='block'>
+          {/* Affiche le titre et l'emplacement de l'hébergement, ainsi que les tags */}
+          <div className='block_titleAndTag'>
+            <TitleAndLocation title={lodgingData.title} location={lodgingData.location} />
+            <Tag tags={lodgingData.tags} />
+          </div>
+
+          {/* Affiche les informations sur l'hôte et la note de l'hébergement */}
+          <div className='block_ratingAndHost'>
+            <Host name={lodgingData.host.name} picture={lodgingData.host.picture} />
+            <Rating rating={parseInt(lodgingData.rating)} />
+          </div>
+        </div>
+
+        <div className='collapseLodging'>
+          {/* Affiche les collapse pour la description et les équipements de l'hébergement */}
+          <Collapse title='Description'>
+            <p>{lodgingData.description}</p>
+          </Collapse>
+          <Collapse title='Équipements'>
+            <ul>
+              {lodgingData.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          </Collapse>
+        </div>
+      </section>
+    );
+  } else {
     return null;
   }
 };
 
 export default Lodging;
-  

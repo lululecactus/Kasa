@@ -3,15 +3,17 @@ import StarGrey from '../../assets/star_grey.png';
 import './Rating.scss';
 
 export default function Rating({ rating }) {
-  const number0fStars = rating;
+
+  const numberOfStars = rating;
 
   return (
     <div className='ratings'>
+      {/* Utilisation de la fonction Array.from pour créer un tableau de 5 éléments */}
       {Array.from({ length: 5 }, (_, index) => (
         <img
           key={index}
-          src={index < number0fStars ? StarColor : StarGrey}
-          alt={index < number0fStars ? "star" : "empty-star"}
+          src={index < numberOfStars ? StarColor : StarGrey}
+          alt={index < numberOfStars ? "star" : "empty-star"}
         />
       ))}
     </div>

@@ -3,13 +3,17 @@
 
 .card-container{
     background-color:$primary;
-    @include flex-direction($justify-c:space-around, $flex-w:wrap);
+    @include flex-direction($justify-c:space-between, $flex-w:wrap);
     border-radius:25px ; 
     width: 100%;  
+    padding: 50px;
     padding-left: 1.5%;
     padding-right: 1.5%;
     padding-top: 6px;
     padding-bottom: 43px;
+
+
+    
     @include mobile{
       flex-direction:column;
       background-color:$white;

@@ -3,7 +3,7 @@
 @import '../../styles/keyframes';
 
 .collapse {
-    width: 71%;
+    width: 85%;
     overflow: hidden;
 
     &_name,
@@ -24,7 +24,7 @@
         color: $white;
 
         & img {
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.6s ease-in-out;
             transform: rotate(0deg);
             cursor: pointer;
 
@@ -45,12 +45,12 @@
         color: $secondary;
 
         &.open {
-            animation: slideDown 0.5s ease-in-out both;
+            animation: slideDown 0.6s ease-in-out both;
             margin-bottom: 30px
         }
 
         &.close {
-            animation: slideUp 0.5s ease-in-out both;
+            animation: slideUp 0.6s ease-in-out both;
 
         }
     }
