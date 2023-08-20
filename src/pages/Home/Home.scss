@@ -7,10 +7,7 @@
     border-radius:25px ; 
     width: 100%;  
     padding: 50px;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
-    padding-top: 6px;
-    padding-bottom: 43px;
+    row-gap: 50px;
 
 
     
@@ -18,10 +15,11 @@
       flex-direction:column;
       background-color:$white;
       padding:0 0 0 0;
+      row-gap: 20px;
    }  
     &::after {
         content: "";
-        width: calc(28% - 0px); // Account for margins and paddings
+        width: calc(31% - 0px); // Account for margins and paddings
         margin-bottom: 20px;
         visibility: hidden;
         @include mobile{

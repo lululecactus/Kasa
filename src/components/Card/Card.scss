@@ -1,36 +1,43 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.card-lease,.card-lease img{
+.card-lease,
+.card-lease img {
     position: relative;
 }
-.card-lease{
-    width: calc(28% - 0px);
-    margin-top: 50px;
+
+.card-lease {
+    width: calc(31% - 0px);
     height: 340px;
     border-radius: 25px;
     overflow: hidden;
     z-index: 0;
-    @include mobile{
+
+    @include mobile {
         margin-top: 20px;
         width: 100%;
         height: 255px;
     }
-    &_img{
-        @include img;    
+
+    &_img {
+        @include img;
     }
-    &_overlay,&_title{
+
+    &_overlay,
+    &_title {
         position: absolute;
     }
-    &_overlay {    
+
+    &_overlay {
         bottom: 0;
         left: 0;
-        z-index: 1; 
+        z-index: 1;
         width: 100%;
         height: 30%;
         background: $colorGradient ;
     }
-    &_title{
+
+    &_title {
         bottom: 20px;
         left: 20px;
         right: 20px;
@@ -38,6 +45,6 @@
         color: $white;
         font-size: 18px;
         font-weight: 500;
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);    
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
     }
 }

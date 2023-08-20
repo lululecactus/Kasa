@@ -2,8 +2,10 @@
 @import '../../styles/variables';
 
 .main-style{
-    margin: 50px 100px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 50px 100px;
     @include mobile{
-        margin:27px 19.5px;
+        padding:27px 20px;
     }
 }

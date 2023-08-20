@@ -23,7 +23,7 @@ const Lodging = () => {
     const lodgingItems = data.find((item) => item.id === id);
     if (!lodgingItems) {
       // Si les données de 'lodgingItems' ne sont pas trouvées, navigue vers la page d'erreur
-      navigate('*');
+      navigate('error');
     } else {
       setLodgingData(lodgingItems);
     }
